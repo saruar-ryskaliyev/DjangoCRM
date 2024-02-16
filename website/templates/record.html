@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Customer Record:</h1>
+<br />
+
+<div class="card">
+    <div class="card-header">
+    {{customer_record.first_name}} {{customer_record.last_name}}     
+    </div>
+    <div class="card-body"> 
+        <strong>Phone number:</strong> {{customer_record.phone}} <h5 class="card-title"></h5>
+        <strong>Email:</strong> {{customer_record.email}} <h5 class="card-title"></h5>
+        <strong>City:</strong> {{customer_record.city}} <h5 class="card-title"></h5>
+        <strong>Address:</strong> {{customer_record.address}} <h5 class="card-title"></h5>
+        <strong>State:</strong> {{customer_record.state}} <h5 class="card-title"></h5>
+        <strong>Zipcode:</strong> {{customer_record.zipcode}} <h5 class="card-title"></h5>
+        <strong>Created At:</strong> {{customer_record.created_at}} <h5 class="card-title"></h5>
+    </div>
+  </div>
+
+  <br/>
+  <br/>
+
+
+  <a href="{% url 'home' %}">  
+    <button type="button" class="btn btn-secondary">Back</button>
+</a>
+
+<a href="{% url 'delete_record' customer_record.id %}">
+    <button type="button" class="btn btn-danger">Delete</button>
+</a>
+
+<a href="{% url 'update_record' customer_record.id %}">
+    <button type="button" class="btn btn-secondary">Update</button>
+</a>
+
+
+ 
+
+ 
+
+{% endblock %}
